@@ -22,7 +22,7 @@ export default class LinksListFilters extends React.Component{
   onChange(e){
 
 
-    Session.set('showVisible',e.target.checked)
+    Session.set('showVisible',!e.target.checked)
 
 
 
@@ -33,7 +33,7 @@ export default class LinksListFilters extends React.Component{
   render(){
     return (
       <div><label className="checkbox">
-        <input className="checkbox__box" type="checkbox" onChange={this.onChange.bind(this)} checked={this.state.visible}/>show hidden links
+        <input className="checkbox__box" type="checkbox" onChange={this.onChange.bind(this)} checked={!this.state.visible}/>show hidden links
       </label></div>
     );
   }
