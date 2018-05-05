@@ -1,27 +1,21 @@
 import React from 'react';
-import { Accounts } from 'meteor/accounts-base'
-import { Link } from 'react-router-dom';
 
-export default class Links extends React.Component{
-  constructor(props){
-    super(props)
+import LinksList from './LinksList'
+import PrivateHeader from './PrivateHeader'
+import AddLink from './AddLink'
+import LinksListFilters from './LinksListFilters'
 
-  }
-  logout(){
-
-    Accounts.logout()
-  }
-  render(){
+export default () =>{
 
       return (<div>
-            <h1>Your Links</h1>
-<Link to="/signup">Not having an acount?</Link>
-            <button onClick={this.logout.bind(this)}>Log Out</button>
+            <PrivateHeader title="Your Links!" />
+            <div className="page-content">
+              <LinksListFilters />
+              <AddLink />
+              <LinksList />
+            </div>
 
         </div>)
-
-  }
-
 
 
 }
